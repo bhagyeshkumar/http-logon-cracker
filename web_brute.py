@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 import requests
+import sys
 import os
 
-# os.system("clear")
-url = "http://10.10.115.231:22/recovery.php"
+os.system('cls')
+if len(sys.argv) < 2:
+    print("Usage: " +sys.argv[0]+ " <url>")
+    sys.exit(1)
+
+url = sys.argv[1]
 
 def login(username, password):
     req = requests.post(url, data={
